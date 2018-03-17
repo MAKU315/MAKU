@@ -3,7 +3,7 @@ install.packages("extrafont")
 library(tm)
 # load the extrafont package
 library(extrafont)
-par(family="AppleMyungjo") # ÇÑ±Û¿ë ÆùÆ®·Î ¼³Á¤
+par(family="AppleMyungjo") # í•œê¸€ìš© í°íŠ¸ë¡œ ì„¤ì •
 
 
 # ------------
@@ -14,7 +14,7 @@ colnames(original_data) <- c("City", "Attraction", "Date", "Grade", "Title", "Re
 
 stop_words <- read.csv("stopwords1.csv", sep=",", header = FALSE)
 
-#stopwords character¤¾
+#stopwords characterã…
 stop_words <- as.character(stop_words$V1)
 # myStopwords <- c(stopwords('english'), stop_words)
 #Usage of tm package
@@ -41,7 +41,7 @@ c <- unlist(corp)
 
 (freq.terms <- findFreqTerms(TermsDocsMat, lowfreq= 100))
 
-query <- "¸Å·Â"
+query <- "ë§¤ë ¥"
 
 words <- rownames(findAssocs(TermsDocsMat, query, .005))[1:20]
 find <- colnames(dtm) %in% words
