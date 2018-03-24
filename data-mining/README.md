@@ -13,6 +13,6 @@ ARIMA 모형같은 경우 R 통계 프로그램에서는 auto.arima 라는 라�
 
 auto.arima 함수와 Grid Search 기반에 arima 추정 모델을 비교해 보았으며, 그 결과 auto.arima 방법은 Grid Search 방식 훨씬 낮은 Performance를 보였다.
 
-### heatmap(visualization).R 코드로 해당 Performance를 시각화 해보았으며, 빨강색 일수록 좋은 Performance, 파랑색일수록 낮은 Performance를 가지는 hyperparameter 조합 지역이다. 
-
+### heatmap(visualization).R 
+코드로 해당 Performance를 시각화 해보았으며, 빨강색 일수록 좋은 Performance, 파랑색일수록 낮은 Performance를 가지는 hyperparameter 조합 지역이다. 
 
