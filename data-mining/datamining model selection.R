@@ -7,12 +7,12 @@ set.seed(1234)
 library(glmnet)
 library(e1071)
 
-place.df.f<- read.csv("C:\\Users\\GaHee\\Documents\\2016 µ¥ÀÌÅÍ¸¶ÀÌ´×\\csv\\adolecent placement study.csv")
-place.df <- read.csv("C:\\Users\\GaHee\\Documents\\2016 µ¥ÀÌÅÍ¸¶ÀÌ´×\\csv\\adolecent placement study.csv")
+place.df.f<- read.csv("C:\\Users\\GaHee\\Documents\\2016 ë°ì´í„°ë§ˆì´ë‹\\csv\\adolecent placement study.csv")
+place.df <- read.csv("C:\\Users\\GaHee\\Documents\\2016 ë°ì´í„°ë§ˆì´ë‹\\csv\\adolecent placement study.csv")
 colnames(place.df)<-c("id",'place','place3','age','race','gender','neuro','emot','danger','elope','los','behav','custd','viol')
 colnames(place.df.f)<-c("id",'place','place3','age','race','gender','neuro','emot','danger','elope','los','behav','custd','viol')
 
-################################ logº¯È¯
+################################ logë³€í™˜
 place.df$los<-log(place.df$los)
 place.df.f$los<-log(place.df.f$los)
 
