@@ -1,4 +1,4 @@
-###### Deep Learning 
+## Deep Learning 
 
 
 딥러닝관련 기초 정리는 
