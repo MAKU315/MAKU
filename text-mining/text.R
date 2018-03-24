@@ -3,33 +3,25 @@ install.packages("extrafont")
 library(tm)
 # load the extrafont package
 library(extrafont)
-par(family="AppleMyungjo") # í•œê¸€ìš© í°íŠ¸ë¡œ ì„¤ì •
+par(family="AppleMyungjo") # ÇÑ±Û¿ë ÆùÆ®·Î ¼³Á¤
 
 
-# ------------
+# Load the data 
 mydata <- read.csv("data/tokenized_reviews_ta_1.csv", header = FALSE, stringsAsFactors=FALSE)
 original_data <- read.csv("data/text4.csv", header = FALSE, stringsAsFactors = FALSE)
 colnames(mydata) <- c("City", "Attraction", "Date", "Grade", "Title", "Review")
 colnames(original_data) <- c("City", "Attraction", "Date", "Grade", "Title", "Review")
 
-stop_words <- read.csv("stopwords1.csv", sep=",", header = FALSE)
 
-#stopwords characterã…
-stop_words <- as.character(stop_words$V1)
-# myStopwords <- c(stopwords('english'), stop_words)
 #Usage of tm package
-#create a corpus
 corp <- Corpus(VectorSource(mydata$Review))
-#apply several operations: lowercase, remove stopwords etc.
-# corp <- tm_map(corp, removeWords, stopwords("english"))
-# #corp <- tm_map(corp, tolower)
-# #create a customized stopwords list & apply it to corpus
-# corp <- tm_map(corp, removeWords, myStopwords)
-#create the Terms x Document Matrix with some options
+
+# ºóµµ¼ö 20 ÀÌÇÏ Á¦°Å 
 minFreq <- 20
 TermsDocsMat <- TermDocumentMatrix(corp, control = list(removePunctuation = FALSE, bounds = list(global = c(minFreq,Inf))))
 #create the Document x Terms Matrix
 DocsTermsMat <- DocumentTermMatrix(corp, control = list(removePunctuation = FALSE, bounds = list(global = c(minFreq,Inf))))
+
 tdm <- as.matrix(TermsDocsMat)
 dtm <- as.matrix(DocsTermsMat)
 
@@ -41,14 +33,14 @@ c <- unlist(corp)
 
 (freq.terms <- findFreqTerms(TermsDocsMat, lowfreq= 100))
 
-query <- "ë§¤ë ¥"
-
+# ¿¹½Ã ¸Å·ÂÀÌ µé¾î°¡´Â corpus³ª ¹®Àå ±¸Á¶ È®ÀÎ
+query <- "¸Å·Â"
 words <- rownames(findAssocs(TermsDocsMat, query, .005))[1:20]
 find <- colnames(dtm) %in% words
 corr <- cor(dtm[,find])
 
-library(corrplot)
 
+library(corrplot)
 par(family="AppleMyungjo")
 corrplot(corr, type = "upper")
 
@@ -63,4 +55,6 @@ df = data.frame(terms=vocab, freq=word_freqs)
 
 library(ggplot2)
 df$terms <- factor( df$terms, levels=unique(as.character(df$terms)) )
-ggplot(df, aes(terms,freq)) + geom_bar(stat= "identity") + scale_x_discrete(name="Terms", labels=df$terms) + xlab("Terms") + ylab("Freq") + coord_flip()
+ggplot(df, aes(terms,freq)) + geom_bar(stat= "identity")+ 
+  scale_x_discrete(name="Terms",labels=df$terms) +
+  xlab("Terms") + ylab("Freq") + coord_flip()
