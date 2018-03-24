@@ -272,7 +272,7 @@ for(s.pos in 1:s.num){
   print(  time.mat[5,s.pos] )
   
   
-  ################################ dicision tree rpart(cart package)
+  ################################ decision tree rpart(cart package)
   
   rpart.time<-proc.time()
   
@@ -291,7 +291,7 @@ for(s.pos in 1:s.num){
   time.mat[6,s.pos] <-(proc.time()-rpart.time)[2]
   print(  time.mat[6,s.pos] )
   
-  ################################ dicision tree C.50 (have boosting)
+  ################################ decision tree C.50 (have boosting)
   
   # find the confidence factor(Complexity) - Hyper parameter 
   ### use cross-validation to find optimal Hyper parameter  CF
