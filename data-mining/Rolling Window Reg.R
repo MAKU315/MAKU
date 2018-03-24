@@ -7,12 +7,12 @@ raw<-read.csv("raw4.csv",header = T,sep=',')
 
 head(raw,4)
 
-#데이터의 차원 확인/ 나중에 점검할때도 필ㅇ
+#데이터의 차원 확인/ 나중에 점검할때도 필요
 dim(raw) # 393 93
 
 
-#width는 설정하면됨 원하는 보고 싶은 만큼 넣어
-# 나는 5 10 20 30 해봤음
+#width는 설정하면됨 원하는 보고 싶은 만큼 넣으면 됨
+# 5 10 20 30 해봤음
 
 for(width in c(5,10,20,30))
 {
@@ -42,7 +42,7 @@ for(width in c(5,10,20,30))
     int[i,var]<-fit$coefficients[1]
     beta[i,var]<-fit$coefficients[2]
     delta[i,var]<-fit$coefficients[3]
-    # as.data.frame 하는 이유는 Date 변수 행을 넣기 위해서야, matrix form에서는 Date가 들어가 지 못해
+    # as.data.frame 하는 이유는 Date 변수 행을 넣기 위해서임, matrix form에서는 Date가 들어가지 못함
   }
   }
   # 해당 파일 저장 
