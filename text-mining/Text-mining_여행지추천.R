@@ -46,24 +46,24 @@ library(glmnet)
 
 
 getwd()
-setwd("C://Users/korea/Desktop/¼ö¾÷/1-1/ÅØ½ºÆ®¸¶ÀÌ´×")
+setwd("C://Users/korea/Desktop/ìˆ˜ì—…/1-1/í…ìŠ¤íŠ¸ë§ˆì´ë‹")
 tr_com <- read.csv("stemmed_eurang_fin.csv", header=T, stringsAsFactors = FALSE) 
 
-# Stopword ¼³Á¤
+# Stopword ì„¤ì •
 myStopwords<-read.csv("stopwords.csv", header=F , sep=",",stringsAsFactors = FALSE)  
 myStopwords<-as.character(myStopwords$V1)
 
 
-# CorpusÈ­·Î º¯È¯
+# Corpusí™”ë¡œ ë³€í™˜
 myCorpus <- Corpus(VectorSource(tr_com$Review)) 
-# ±¸µÎÁ¡ Á¦°Å
+# êµ¬ë‘ì  ì œê±°
 PreCorpus <- tm_map(myCorpus, content_transformer(removePunctuation)) 
 PreCorpus[[2]][1]
 
 PreCorpus <- tm_map(PreCorpus, removeWords, myStopwords) 
 
 
-# Term document Matrix »ı¼º
+# Term document Matrix ìƒì„±
 myTDM <- TermDocumentMatrix(myCorpus, control = list(minWordLength = 2)) 
 
 # TF-IDF : word weigting
@@ -105,7 +105,7 @@ LSI.Mat <- as.data.frame(t((diag(100)*LSI.D[1:100]) %*% t(LSI.V[,1:100])))
 # With LSI Features 
 LSI.dist <- dist(LSI.Mat, method = "cosine", diag = TRUE) 
 
-# ´ÜÁ¡ ¸Ş¸ğ¸®¿ë·®ÀÌ ¸¹ÀÌ ÇÊ¿ä
+# ë‹¨ì  ë©”ëª¨ë¦¬ìš©ëŸ‰ì´ ë§ì´ í•„ìš”
 
 
 # pos 1 non-pos 0
@@ -134,7 +134,7 @@ LSI.hr.Clusters <- cutree(LSI.hr, k=kn)
 # Find the clusters 
 
 
-# cluster ¸¶´ÙÀÇ °¨¼ººĞ¼®(Sentiment Analysis)
+# cluster ë§ˆë‹¤ì˜ ê°ì„±ë¶„ì„(Sentiment Analysis)
 i<-20
 ##############i#####
 for(i in 1:kn){
