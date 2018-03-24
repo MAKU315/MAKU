@@ -2,8 +2,9 @@
 
 
 딥러닝관련 기초 정리는 
-OReilly.Hands－On.Machine.Learning.with.Scikit－Learn.and.TensorFlow 책과 
-저자의 github github/ageron/handson-ml에서 많은 도움을 받았고 감사한 마음을 남깁니다
+OReilly.Hands－On.Machine.Learning.with.Scikit－Learn.and.TensorFlow 책과
+
+책 저자의 github github/ageron/handson-ml에서 많은 도움을 받았고 감사한 마음을 남깁니다
 
 
 ANN 기초 정리 : 초기 Deep Learning 모델에 대한 설명과 예시관련 코드
