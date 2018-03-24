@@ -6,5 +6,8 @@
 
 각 리뷰의 Corpus를 Doctowordmatrix로 변환하기 위하여, Singular Value Decomposition방법(Latent Semantic Analysis)을 활용한 matrix를 구성하였다.
 
-Hierarchical clustering을 활용하여, 각 여행지 리뷰들을 군집한 후 각 군집에서의 감성분석을 진행하였다. 이를 통해 우리는 여행지별 주요 키워드를 추출한 동시에 그 키워드 마다의 긍정, 부정의 요소까지도 잡아 낼 수 있었다.
+Hierarchical clustering을 활용하여, 각 여행지 리뷰들을 군집한 후 각 군집에서의 감성분석을 진행하였다.
+이를 통해 우리는 여행지별 주요 키워드를 추출한 동시에 그 키워드 마다의 긍정, 부정의 요소까지도 잡아 낼 수 있었다.
 
+
+자세한 과정은 피피티에 소개해 두었다.
