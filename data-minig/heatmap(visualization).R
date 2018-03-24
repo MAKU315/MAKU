@@ -5,15 +5,17 @@ library(RColorBrewer)
 library(lattice)
 library(reshape2)
 library(reshape)
-
 library(tidyr)
+
+# set the work space
 setwd("C:/Users/lee/Desktop/data_prep")
 
-
+#Load the AIC ( the result of Grid search )
 aic.mat <- read.csv("g_heatmap.csv")
 aic.mat[aic.mat == 0] <- max(aic.mat)
 aic.mat2 <- as.matrix(aic.mat)
 
+#Load the RMSE ( the result of Grid search )
 RMSE.mat <- read.csv("g_RMSE_heatmap.csv")
 RMSE.mat2 <- as.matrix(RMSE.mat)
 
@@ -23,8 +25,8 @@ RMSE.mat3[RMSE.mat3$value == 0,3] <- max(RMSE.mat3$value)
 boxplot(RMSE.mat3$value)
 m1<-matrix(RMSE.mat3$value,nrow=75,ncol = 100,byrow =F) 
 
+# Write the Row & Col names
 rownames(m1)<-c(paste(1:75,sep = ""))
-
 colnames(m1)<-c(paste("V",1:100,sep = ""))
 
 
@@ -39,6 +41,7 @@ f <- function(m) t(m)[,nrow(m):1]
 
 # heatmap(aic.mat2,Colv=NA,Rowv=NA,scale="none")
 
+# make the function levelplot with panel
 my_panel <- function(...) {
   panel.levelplot(...)
   panel.abline(h=seq(0,75.5,by=5)-4.5, v =seq(0,100.5,by=5)-4.5, lty = 2)
@@ -88,17 +91,16 @@ levelplot(f(total),xlab = "", ylab = "",scales=list(x=list(rot=90, alternating=3
 # p <- p + scale_x_continuous(breaks =c(0,5,10,15, 20, 25))
 
 
-#p
 
-
-data(french_fries)
-ffm <- melt(french_fries, id = 1:4, na.rm = TRUE)
+### check the melt & dcast library
+#data(french_fries)
+#ffm <- melt(french_fries, id = 1:4, na.rm = TRUE)
 
 # Aggregate examples - all 3 yield the same result
-dcast(ffm, treatment ~ .)
-dcast(ffm, treatment ~ ., function(x) length(x))
-dcast(ffm, treatment ~ ., length) 
+#dcast(ffm, treatment ~ .)
+#dcast(ffm, treatment ~ ., function(x) length(x))
+#dcast(ffm, treatment ~ ., length) 
 
 # Passing further arguments through ...
-dcast(ffm, treatment ~ ., sum)
-dcast(ffm, treatment ~ ., sum, trim = 0.1)
+#dcast(ffm, treatment ~ ., sum)
+#dcast(ffm, treatment ~ ., sum, trim = 0.1)
