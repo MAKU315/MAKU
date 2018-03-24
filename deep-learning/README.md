@@ -7,6 +7,7 @@ OReilly.Hands－On.Machine.Learning.with.Scikit－Learn.and.TensorFlow 책과
 책 저자의 github github/ageron/handson-ml에서 많은 도움을 받았고 감사한 마음을 남깁니다
 
 
+## 기초 정리
 ANN 기초 정리 : 초기 Deep Learning 모델에 대한 설명과 예시관련 코드
 
 CNN 기초 정리 : CNN(convolutional Neural Network)모델에 대한 설명과 예시관련 코드
@@ -16,6 +17,7 @@ Python을 활용한 기초분석 : Python Scikit-Learn라이브러리 활용을 
 를 정리해 두었다.
 
 
+## 실제 
 Deep Learning 실제 적용 : 위에서 배운 방법을 적용하여 실제적으로 모델을 생성해보고 최종모델선택을 위한 평가를 진행 하였다. 
 
 비교 모델은 
