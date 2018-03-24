@@ -5,7 +5,7 @@ set.seed(1234)
 library(glmnet)
 library(e1071)
 
-place.df <- read.csv("C:\\Users\\GaHee\\Documents\\2016 µ¥ÀÌÅÍ¸¶ÀÌ´×\\csv\\adolecent placement study.csv")
+place.df <- read.csv("C:\\Users\\GaHee\\Documents\\2016 ÂµÂ¥Ã€ÃŒÃ…ÃÂ¸Â¶Ã€ÃŒÂ´Ã—\\csv\\adolecent placement study.csv")
 colnames(place.df)<-c("id",'place','place3','age','race','gender','neuro','emot','danger','elope','los','behav','custd','viol')
 
 colnames(place.df)
