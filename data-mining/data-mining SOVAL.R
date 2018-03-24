@@ -5,31 +5,6 @@ set.seed(1234)
 library(glmnet)
 library(e1071)
 
-place.df <- read.csv("C:\\Users\\GaHee\\Documents\\2016 µ¥ÀÌÅÍ¸¶ÀÌ´×\\csv\\adolecent placement study.csv")
-colnames(place.df)<-c("id",'place','place3','age','race','gender','neuro','emot','danger','elope','los','behav','custd','viol')
-
-colnames(place.df)
-##############################################################
-
-place.df$los<-log(place.df$los)
-
-##############################################################
-
-y.vec <- place.df$place3
-y.vec <- as.numeric(y.vec)
-
-temp1 <- (1*(place.df$neuro==1))
-temp2 <- (1*(place.df$neuro==2))
-temp3 <- (1*(place.df$neuro==3))
-temp4 <- (1*(place.df$danger==1))
-temp5 <- (1*(place.df$danger==2))
-temp6 <- (1*(place.df$danger==3))
-emot<-place.df$emot
-
-
-x.mat<- as.matrix(cbind(place.df[,-c(1,2,3,7,9)],temp1,temp2,temp3,temp4,temp5,temp6)) #dummy
-#x.mat<- as.matrix(cbind(place.df[,-c(1,2,3,7,9)],temp1,temp2,temp3,temp4,temp5,temp6,temp1*emot,temp2*emot,temp3*emot)) #dummy+interaction
-
 ##############################################################
 
 r.num=4; s.num=500
