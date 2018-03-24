@@ -3,7 +3,7 @@ install.packages("extrafont")
 library(tm)
 # load the extrafont package
 library(extrafont)
-par(family="AppleMyungjo") # ÇÑ±Û¿ë ÆùÆ®·Î ¼³Á¤
+par(family="AppleMyungjo") # í•œê¸€ìš© í°íŠ¸ë¡œ ì„¤ì •
 
 
 # Load the data 
@@ -16,7 +16,7 @@ colnames(original_data) <- c("City", "Attraction", "Date", "Grade", "Title", "Re
 #Usage of tm package
 corp <- Corpus(VectorSource(mydata$Review))
 
-# ºóµµ¼ö 20 ÀÌÇÏ Á¦°Å 
+# ë¹ˆë„ìˆ˜ 20 ì´í•˜ ì œê±° 
 minFreq <- 20
 TermsDocsMat <- TermDocumentMatrix(corp, control = list(removePunctuation = FALSE, bounds = list(global = c(minFreq,Inf))))
 #create the Document x Terms Matrix
@@ -33,8 +33,8 @@ c <- unlist(corp)
 
 (freq.terms <- findFreqTerms(TermsDocsMat, lowfreq= 100))
 
-# ¿¹½Ã ¸Å·ÂÀÌ µé¾î°¡´Â corpus³ª ¹®Àå ±¸Á¶ È®ÀÎ
-query <- "¸Å·Â"
+# ì˜ˆì‹œ ë§¤ë ¥ì´ ë“¤ì–´ê°€ëŠ” corpusë‚˜ ë¬¸ì¥ êµ¬ì¡° í™•ì¸
+query <- "ë§¤ë ¥"
 words <- rownames(findAssocs(TermsDocsMat, query, .005))[1:20]
 find <- colnames(dtm) %in% words
 corr <- cor(dtm[,find])
