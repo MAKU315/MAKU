@@ -17,5 +17,5 @@ auto.arima 함수와 Grid Search 기반에 arima 추정 모델을 비교해 보�
 코드로 해당 Performance를 시각화 해보았으며, 빨강색 일수록 좋은 Performance, 파랑색일수록 낮은 Performance를 가지는 hyperparameter 조합 지역이다. 
 
 <br>
-<img height="700" src="https://github.com/MAKU315/practice-github/heatmap.PNG" />
+<img height="700" src="https://github.com/MAKU315/practice-github/heatmap.PNG"/>
 <br>
