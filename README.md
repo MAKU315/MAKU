@@ -6,11 +6,9 @@
 
 ### 1. Data-mining
 
-크게 Data-mining part에서는 Classification 관련 분석과 시계열분석으로 나눠져있다.
+크게 Data-mining part에서는
 
-이밖에 생존분석이나 의료분석관련해서 논문이 발표됨에 따라 
-
-같이 코드도 추가해서 올리고자 한다.
+Classification 관련 분석과 시계열분석으로 나눠져있다.
 
 
 ### 2. Deep-learning
