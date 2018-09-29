@@ -2,4 +2,6 @@
 
 ## 데이터 사이언스 스쿨(https://datascienceschool.net) 과 점프 투 파이선
 
-### 1. Pytohn 기초 문법
+#### Tutorial 
+
+#### 1. Pytohn 기초 문법
