@@ -4,6 +4,7 @@
 
 
 ### 1. Data-mining
+--------
 
 크게 Data-mining part에서는
 
@@ -11,6 +12,7 @@ Classification 관련 분석과 시계열분석으로 나눠져있습니다.
 
 
 ### 2. Deep-learning
+--------
 
 크게 Deep-Learning part에서는 현재 공부하면서 정리하는 정리파일과 예제,
 
@@ -26,6 +28,7 @@ Classification 관련 분석과 시계열분석으로 나눠져있습니다.
 
 
 ### 3. Text-mining
+--------
 
 Text-mining에서 크롤링이나, 워드임베딩(word2vec, Glove) 등은 생략하였고,
 
@@ -35,9 +38,14 @@ Doc2word Matrix 구성 이후의 분석관련 코드를 올리어 두었다.
 
 
 ### 4.Grapic model 
+--------
 
 현재 Grapic model 논문 작성이 완료되는 후에 코드를 업로드 할 예정이며, 같이 공개된 유전체 데이터를
 
 분석한 결과도 같이 올릴 예정이다. 올해 말 쯤 업로드가 될 예정이다. 
 
  - 해당 논문 제출 중 이며, 논문 개제 완료 후 최종 마무리
+ 
+ 
+ ### 5.Python
+ 파이썬 기초에 대해서 다루고자 합니다.
